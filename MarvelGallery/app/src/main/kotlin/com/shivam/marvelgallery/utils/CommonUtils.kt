@@ -15,5 +15,4 @@ class CommonUtils {
             return connectivityManager?.activeNetworkInfo?.isConnectedOrConnecting ?: false
         }
     }
-
 }

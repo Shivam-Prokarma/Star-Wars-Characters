@@ -9,7 +9,15 @@ import com.google.gson.annotations.SerializedName
 class StarWarResponse() {
 
     @Expose
+    @SerializedName(value = "count")
+    var countCharacters: Int? = null
+
+    @Expose
+    @SerializedName(value = "next")
+    var nextUrl: String? = null
+
+    @Expose
     @SerializedName(value = "results")
-    var result: List<StarWarsCharacter>? = null
+    var result: List<StarWarsCharacterComplete>? = null
 
 }

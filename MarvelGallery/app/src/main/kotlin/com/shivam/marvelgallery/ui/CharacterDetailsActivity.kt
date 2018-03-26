@@ -44,10 +44,11 @@ class CharacterDetailsActivity : AppCompatActivity(), CharacterDetailActivityDel
     }
 
     override fun showError() {
-        var builder = AlertDialog.Builder(this)
-        builder.setMessage(R.string.error_occured)
-        builder.setCancelable(false)
-        builder.setNeutralButton(R.string.ok, { dialogInterface, i -> dialogInterface.dismiss() })
+        var builder = AlertDialog.Builder(this).apply {
+            setMessage(R.string.error_occured)
+            setCancelable(false)
+            setNeutralButton(R.string.ok, { dialogInterface, i -> dialogInterface.dismiss() })
+        }
         builder.create().show()
     }
 

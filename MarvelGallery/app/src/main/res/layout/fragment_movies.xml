@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shivam.marvelgallery.ui.MoviesFragment">
+
+    <TextView
+        android:id="@+id/textview_film_count"
+        style="@style/style_text_view_character_details" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_films"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textview_film_count" />
+
+</RelativeLayout>
