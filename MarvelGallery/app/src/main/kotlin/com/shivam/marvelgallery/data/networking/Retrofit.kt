@@ -14,17 +14,19 @@ import java.util.concurrent.TimeUnit
 
 val retrofit by lazy { createRetrofit() }
 
+var baseUrl = "https://swapi.co/api/"
+
 fun createOkHttpClient(): OkHttpClient {
     var builder: OkHttpClient.Builder = OkHttpClient.Builder().apply {
         connectTimeout(MarvelGalleryApplication.getApplicationContext().resources.getInteger(R.integer.api_connection_timeout).toLong(), TimeUnit.SECONDS)
-        readTimeout(MarvelGalleryApplication.getApplicationContext().resources.getInteger(R.integer.api_read_timeout).toLong() , TimeUnit.SECONDS)
+        readTimeout(MarvelGalleryApplication.getApplicationContext().resources.getInteger(R.integer.api_read_timeout).toLong(), TimeUnit.SECONDS)
     }
     return builder.build()
 }
 
 fun createRetrofit(): Retrofit {
     var builder: Retrofit.Builder = Retrofit.Builder().apply {
-        baseUrl(MarvelGalleryApplication.getApplicationContext().getString(R.string.start_wars_base_url))
+        baseUrl(baseUrl)
         addConverterFactory(GsonConverterFactory.create())
         addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync())
         client(createOkHttpClient())

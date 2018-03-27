@@ -11,7 +11,7 @@ import com.shivam.marvelgallery.ui.MoviesFragment
 /**
  * Created by stomar on 3/25/18.
  */
-class ViewPagerAdapter(var fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
+class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
 
     val TAB_NAMES = arrayOf<String>(MarvelGalleryApplication.getApplicationContext().getString(R.string.character), MarvelGalleryApplication.getApplicationContext().getString(R.string.movies))
 
